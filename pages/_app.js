@@ -1,7 +1,11 @@
-import '../styles/index.css'
+import { DataContextProvider } from "../providers/dataContextProvider";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const Application = ({ Component, pageProps }) => {
+  return (
+    <DataContextProvider>
+      <Component {...pageProps} />
+    </DataContextProvider>
+  );
+};
 
-export default MyApp
+export default Application;
